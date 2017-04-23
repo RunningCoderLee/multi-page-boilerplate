@@ -1,0 +1,7 @@
+# ignore all files except public folder in this project
+*.js
+!public/**/*.js
+!clientSrc/**/*.js
+
+
+

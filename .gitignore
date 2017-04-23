@@ -114,4 +114,5 @@ typings/
 # dotenv environment variables file
 .env
 
-
+# builded cient files
+static/build

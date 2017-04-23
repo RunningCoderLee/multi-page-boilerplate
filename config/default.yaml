@@ -1,0 +1,135 @@
+# 默认的配置文件
+# 注意!!! 如非必要不要直接修改此文件
+# 请在config目录下新建 development.yaml
+mode: B2B #只能是B2B
+#uploadFileSize: '7 * 1024 * 1024' #上传文件尺寸
+#fileType: #上传文件格式限制
+#  - image/jpg
+#  - image/jpeg
+#  - image/png
+#  - image/gif
+#verifyShipNum: true #验证发货数量是否可以大于订单数量
+#enableCaptcha: false #启用验证码检查
+#enableSMS: true #启用短信发送
+#gspScopeCheck: true #GSP范围检测开关
+#cloudURL: 'http://www.romens.cn/' #云平台入口URL
+#cloudDBName: CloudDB #云平台数据库名称
+#paymentCallbackUrl: 'http://wx.cd.romens.cn/order/payCallback' #订单支付成功跳转地址 这个应该没用了
+#aliPayCallbackUrl: '127.0.0.1:3300' #什么用途
+#payConfigUrl: 'http://docker:6251' #支付中心服务地址
+#payExpireMin: 15 #支付超时时间（分钟数）,发送到支付网关，超过该时间支付成功后支付方自动退款
+#refundExpireMin: 15 #退款超时时间（分钟数），超过该时间没有退款成功则人工介入
+#sessionSecret: 'May had a little lamb.' #用于session数据的加密秘钥
+#sessionTTL: 604800 #session超时时间
+#tokenTTL: 604800 #token超时时间,应该干掉
+#redisTTL: 60 #redis页码缓存时间
+#clientModifyGSP: false #允许客户修改GSP信息
+#isPushClientToERP: false #审核客户推送至ERP
+#shipToRegisteredAddressOnly: true #是否限制发货地址仅用注册地址
+#creditCanPay: false #看起来没什么用。。。
+#entryFromOrderOnly: true #启用订单作为操作唯一入口
+#shipStrictly: true #严格控制发货品种数量不得超过订单品种数量
+#returnStrictly: true #为true时，必须从订单列表/详情发起退货；为false时，则保留现在的从商品中选择发起退货
+#pcgMerchantId: '12497407959966526502' #商户在支付中心的ID
+#serviceId: '12497407445124098085' #支付中心兼容的服务ID
+server: #服务的配置
+  ip: 125.71.132.197
+  domain : cd
+  port : 3300
+#idPrefix: #displayId的前缀
+#  record: B2B #记录
+#  order: DL #订单
+#  ship: FH #发货
+#  return: TH #退货
+#  reject: JS #拒收
+#  refund: TK #退款
+#goodsTopBuyDays: 30 #没有地方用,不知道是干嘛的
+#browserCacheTTL: 300 #控制浏览器缓存静态文件的时间
+#cacheConfig: #cache相关,目前用redis
+#  enabled: true
+#  TTL:
+#    LONG: 86400
+#    MID: 3600
+#    SHORT: 300
+#    FLASH: 60
+#    24H: 86400
+#    12H: 43200
+#    6H: 21600
+#    2H: 7200
+#    60M: 3600
+#    30M: 1800
+#    15M: 900
+#    5M: 300
+#    3M: 180
+#    60S: 60
+#  keys:
+#    DomainDBSuffixMap: "DomainDBSuffixMap"
+#    GoodsTypesInJSON: "goodsTypesInJSON" #缓存商品分类的键名
+#    PubSubChannelList: "PubSubChannelList" #Redis PubSub Channel List的键名
+#    CustomerSubDomains: "CustomerSubDomains" #销售企业的域名与数据库名映射关系表
+#    ClientGoodsPrice: "ClientGoodsPrice" #客户单品价格缓存
+#    ClientCategoryPrice: "ClientCategoryPrice" #客户类价格缓存
+#    GoodsPrice: "GoodsPrice" #商品基础价格
+#dbConfig: #数据库相关 目前用mysql
+#  connectionLimit: 10
+#  host: cd
+#  user: root
+#  password: romens@2015
+#  logSql: true
+#redisConfig: #redis配置
+#  prefix : romens
+#  host: cd
+#  port: '6379'
+#  dbNum: '14'
+#mq: #消息队列
+#  OfflineTaskPrefix: OfflineTask #离线任务消息队列前缀名称，消息队列都会以执行的unix 用户名字为后缀
+#  dbConnectionLimit: 10 #worker的数据库连接数
+#indexNewsCounts: 7 #首页显示的新闻窗体的新闻条数
+#email: #邮件配置,审核通过等等发邮件用
+#  fromUser: edi@romenscd.cn
+#  passWord: Romens2016
+#  host: smtp.exmail.qq.com
+#  port: 465
+#sccMode: SM #配置SCC适应的客户模式,现在没用了
+#pointDigit: #前台控制小数点位数
+#  DEFAULT: 2
+#  SHORT: 1
+#  LONG: 4
+#msgCheckSec: 50 #查询新消息间隔时间（秒数）
+#maxSyncGoodsCount: 1000 #每次同步的商品数量,应该也没用了
+#sync_goods_period: #同步商品的时间段
+#  startTime: '0:30'
+#  endTime: '4:30'
+#closeOrderIntervalTime: 24 #下订单后相隔多少时间未付款则自动关闭订单
+#WechatStartFlag: 0 #这是干嘛的。。。
+#protocolHeader: 'http://' #协议头,http  https
+#serviceChargeRate: 0 #服务费收取比率 (平台配置，暂设为0.5%),应该是没用
+#logger: #日志设置
+#  system: 'DEBUG'
+#  cart: 'TRACE'
+#edxConfig: #edx设置
+#  uuid: yuetong001 #uuid与agent中对应
+#  client: romensFetchClients
+#  pushClient: romensPushClients
+#  ship: romensFetchShips
+#  goods: romensFetchGoods
+#  order: romensFetchApprovedOrders
+#  pushOrder: romensPushApprovedOrder
+#  goodsInventory: romensFetchGoodsInventory
+#  fetchCount: romensFetchNum
+#  clientSyncLastTime: '2017-03-07'
+#  shipSyncLastTime: '2017-01-02'
+#  goodsSyncLastTime: '2017-03-07'
+#  orderSyncLastTime: '2017-01-04'
+#  edxService: 'http://edx.romenscd.cn:6200/api/operation'
+#test_tag_open : true
+#customer:
+#  id : 1
+#  dbName : customerDB
+#  businessLicense : 652900050002027
+#report_path : "static/reports/"
+#upload_path : "static/upload/"
+#cacheUploadDir : "static/upload/cache/"
+#imageUploadDir: "static/upload/image/"
+#website_contract: "static/contract/website_contract.pdf"
+#shenmu_purchase_contract : "static/contract/shenmu_purchase_contract.pdf"
